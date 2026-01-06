@@ -1,3 +1,9 @@
+import dotenv from "dotenv";
+import path from "path";
+
+dotenv.config({
+  path: path.resolve(process.cwd(), ".env"),
+});
 
 import express, { type Request, Response, NextFunction } from "express";
 import { createServer } from "http";
@@ -86,9 +92,10 @@ app.use((req, res, next) => {
   }
 
   // Start server
-  const port = Number(process.env.PORT) || 5000;
+const PORT = process.env.PORT || 5000;
 
-  httpServer.listen(port, "0.0.0.0", () => {
-    log(`🚀 Server running on http://localhost:${port}`);
-  });
+httpServer.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
 })();

@@ -16,10 +16,10 @@ export async function registerRoutes(
 
       // Send email notification asynchronously (non-blocking)
       sendLeadNotification(lead.email, lead.productInterest).catch(
-        (err: unknown) => {
-          console.error("Failed to send email notification:", err);
-        }
-      );
+  (err: unknown) => {
+    console.error("Failed to send email notification:", err);
+  }
+);
 
       res.status(201).json(lead);
     } catch (err: unknown) {

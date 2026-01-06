@@ -2,12 +2,17 @@
   "compilerOptions": {
     "outDir": "dist",
     "rootDir": ".",
-    "module": "CommonJS",
+    "module": "Node16",
     "target": "ES2020",
-    "moduleResolution": "node",
+    "moduleResolution": "node16",
     "esModuleInterop": true,
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@shared/*": ["shared/*"]
+    }
   },
-  "include": ["server/**/*", "shared/**/*"]
+  "include": ["server/**/*", "shared/**/*"],
+  "exclude": ["vite.config.ts", "client"]
 }
